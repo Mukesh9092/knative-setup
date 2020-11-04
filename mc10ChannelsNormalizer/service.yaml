@@ -1,0 +1,21 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: mc10channelsnormalize
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: 076395046979.dkr.ecr.ap-south-1.amazonaws.com/mc10channelsnormalizer:latest
+          env:
+            - name:  DESTINATION
+              value: "DESTINATION"
+            - name:  EXPECTED_INTERVAL
+              value: "60000"
+            - name:  S3_BUCKET
+              value: "S3_BUCKET"
+            - name:  GRAPHQL_ENDPOINT
+              value: "GRAPHQL_ENDPOINT"
+            - name:  TARGET
+              value: "mc10ChannelsNormalize testing will remove *****"

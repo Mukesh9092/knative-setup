@@ -1,0 +1,33 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: eventrouter
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: 076395046979.dkr.ecr.ap-south-1.amazonaws.com/eventrouter:latest
+          env:
+            - name:  TARGET_BUCKET
+              value: "TARGET_BUCKET"
+            - name:  PREFIX
+              value: "events/"
+            - name:  EVENT_METRICS_PROCESSED
+              value: "mc10/SUBJECT_CREATED/"
+            - name:  EVENT_SUBJECT_CREATED
+              value: "mc10/SUBJECT_CREATED/"
+            - name:  EVENT_STUDY_STARTED
+              value: "mc10/STUDY_STARTED/" 
+            - name:  EVENT_STUDY_STOPPED
+              value: "mc10/STUDY_STOPPED/"
+            - name:  EVENT_RECORDINGS_UPLOADED
+              value: "mc10/RECORDINGS_UPLOADED/"
+            - name:  EVENT_ACTIVITY_COMPLETED
+              value: "mc10/ACTIVITY_COMPLETED/"
+            - name:  EVENT_DIARY_COMPLETED
+              value: "mc10/DIARY_COMPLETED/"
+            - name:  EVENT_MESSAGE_POSTED
+              value: "mc10/MESSAGE_POSTED/" 
+            - name:  TARGET
+              value: "eventrouter testing will remove *****"

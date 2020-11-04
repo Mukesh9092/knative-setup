@@ -1,0 +1,21 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: cdmvalidation
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: 076395046979.dkr.ecr.ap-south-1.amazonaws.com/cdmvalidation:latest 
+          env:
+            - name:  RULE_FILE_NAME
+              value: "validationRules.json"
+            - name:  REDIS_PORT
+              value: "6379"
+            - name:  REDIS_HOST
+              value: "my-release-redis-master.default.svc.cluster.local"
+            - name:  REDIS_EXPIRATION
+              value: "86400"
+            - name:  TARGET
+              value: "cdmvalidation testing will remove *****"

@@ -1,0 +1,19 @@
+{
+  "name": "knative-serving-helloworld",
+  "version": "1.0.0",
+  "description": "Simple hello world sample in Node",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.16.4",
+    "aws-sdk": "^2.783.0", 
+    "id64": "^1.2.3",
+    "computer-name": "^0.1.0",
+    "ssh2-sftp-client": "^5.1.2",
+    "fs-extra": "^9.0.1"
+  }
+}
